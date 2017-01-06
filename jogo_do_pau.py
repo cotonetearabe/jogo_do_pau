@@ -2,7 +2,7 @@
 '''
 Em falta:
 -Mais historia mais opçoes uma "teia" mais ligada e maior
--Um gui ou uma janela destacada para nao estar tao primitivo pelo menos (ver turtleworld)
+-Um gui ou uma janela destacada para nao estar tao primitivo pelo menos (ver turtleworld) or tk
 -Historia para preencher o jogo historias do pau são posivies
 
 Ideias:
@@ -16,38 +16,21 @@ Bugs:
 import math
 import random
 import os
-import image as img
+from PIL import Image as img
 
 def before():
 	q = input('Queres voltar ao menu?(ç/n)')
-	a = random.randrange(0,999)
-	if a == 1:
-		if q == 'ç' or q == 'Ç':
-			print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n' * a )
-			start()
-		elif q == 'n' or q == 'N':
-			print('k...')
-			before()
-		else:
-			xoragora()
-	elif a % 2 == 0:
-		if q == 'ç' or q == 'Ç':
-			print('\n\n\n\n\n\n\n\n\n' * a)
-			start()
-		elif q == 'n' or q == 'N':
-			print('k...')
-		else:
-			xoragora()
-	elif a % 3 == 0:
-		if q == 'ç' or q == 'Ç':
-			print('\n\n\n\n\n\n\n\n\n\n')
-			start()
-		elif q == 'n' or q == 'N':
-			print('k....')
-		else:
-			xoragora()
+	a = random.randrange(2,54)
+	if q == 'ç' or q == 'Ç':
+		print('\n\n\n\n\n\n\n\n\n' * a )
+		start()
+	elif q == 'n' or q == 'N':
+		print('k...')
+		before()
 	else:
-		print("idk")
+		print('idk')
+		before()
+
 
 def xoragora():
 	xoragora = img.open('Xoragora.jpg')
@@ -55,7 +38,7 @@ def xoragora():
 
 
 def start():
-	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4: \n\n Bons Paus! cotonete.arabe")
+	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4: \n\n Bons Paus! cotonete.arabe\n\n")
 	y = eval(x)
 	if y == 0:
 		start_the_game()
@@ -67,6 +50,10 @@ def start():
 		um_vs_zero()
 	elif y == 4:
 		quem_quer_ser_pau()
+	elif y == 5:
+		xadrez()
+	else:
+		start()
 
 
 def start_the_game():
@@ -139,13 +126,15 @@ def start_the_gamev2():
 	contador = 0
  	if c == r:
 		print('Penalti! Parabéns\nE volta a zero...')
-		contador = 1 + contador
+		contador += 1
 	elif (c < r):
 		print('A carta é inferior a intrudozida, ', c, '\n Bebe: ', r - c)
 	elif (c > r):
 		print('A carta é superior a intrudozida, ', c, '\n Bebe: ', c - r)
 	else:
 		print("idk")
+	c_u += r
+	print(c_u)
 	#funçao para ver quais cartas sairam e imprimir uma lista serve bem e rapido de fazer
 	#print game board for (each) cycle
 
@@ -170,7 +159,6 @@ def the_game():
 			before()
 	else:
 		xoragora()
-		before()
 
 def tracadinho():
 	pau = input("Pau? ç/n")
@@ -182,7 +170,7 @@ def tracadinho():
 				tracadinho()
 			elif o =='n' or o =='N':
 				print('...')
-				before()
+				start()
 			else:
 				before()
 	elif pau == 'n' or pau == 'N':
@@ -199,25 +187,31 @@ def um_vs_zero():
 	if type(y) == int:
 		for i in range(y):
 			a = random.randrange(0,2)
-			print(a)
 			if a == 0:
 				c_o += 1
 			elif a == 1:
 				c_i += 1
-			print('\n\n\n', c_o, c_i)
-			if c_o > c_i:
-				print("\n\n\nOs 0's ganharam...\nGanharam por",c_o - c_i,"\nDrink up!!!!")
-			elif c_o < c_i:
-				print("\n\n\n\nOs 1's ganharam...\nGanharam por",c_i - c_o,"\n\nDrink up!!!")
+	if c_o > c_i:
+		print("\n\n\nOs 0's ganharam...\nGanharam por",c_o - c_i,"\nDrink up!!!!")
+	elif c_o < c_i:
+		print("\n\n\n\nOs 1's ganharam...\nGanharam por",c_i - c_o,"\n\nDrink up!!!")
 	before()
 
-
 def quem_quer_ser_pau():
-    x = (input('insere os nomes das as pessoas que estao ai e separa-as com virgulas(,) :').split(','))
-    print(random.choice(x), '\n eu sei que estavam a espera que isto fosse tipo quem quer ser milionario\ncalma isto sou so eu a criar nao ha tempo para tudo se querem mais ajudem')
-    before()
+	x = (input('insere os nomes das as pessoas que estao ai e separa-as com virgulas(,) :').split(','))
+	print(random.choice(x), '\n eu sei que estavam a espera que isto fosse tipo quem quer ser milionario\ncalma isto sou so eu a criar nao ha tempo para tudo se querem mais ajudem')
+	before()
 
-
-
-
+def xadrez():
+	print("lel... bebe")
+	k = input('Bebeste (ç/n)')
+	e = eval(k)
+	if e == 'ç' or e == 'Ç':
+		 print('Check')
+		 xadrez()
+	elif e == 'n' or e == 'N':
+		print('and next...')
+		start()
+	else:
+		print('Well ur retarded')
 start()
