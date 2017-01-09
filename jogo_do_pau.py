@@ -16,7 +16,6 @@ Bugs:
 import math
 import random
 import os
-from PIL import Image as img
 
 def before():
 	q = input('Queres voltar ao menu?(ç/n)')
@@ -32,13 +31,9 @@ def before():
 		before()
 
 
-def xoragora():
-	xoragora = img.open('Xoragora.jpg')
-	xoragora.show()
-
 
 def start():
-	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4: \n\n Bons Paus! cotonete.arabe\n\n")
+	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5: \n\n Bons Paus! cotonete.arabe\n\n")
 	y = eval(x)
 	if y == 0:
 		start_the_game()
@@ -158,7 +153,7 @@ def the_game():
 			print('f..')
 			before()
 	else:
-		xoragora()
+		before()
 
 def tracadinho():
 	pau = input("Pau? ç/n")
@@ -192,9 +187,9 @@ def um_vs_zero():
 			elif a == 1:
 				c_i += 1
 	if c_o > c_i:
-		print("\n\n\nOs 0's ganharam...\nGanharam por",c_o - c_i,"\nDrink up!!!!")
+		print("\n\n\n0:", c_o, "1: ", c_i, "\nOs 0's ganharam...\nGanharam por", c_o - c_i, "\nDrink up!!!!")
 	elif c_o < c_i:
-		print("\n\n\n\nOs 1's ganharam...\nGanharam por",c_i - c_o,"\n\nDrink up!!!")
+		print("\n\n\n\n0:", c_o, "1: ", c_i, "\nOs 1's ganharam...\nGanharam por",c_i - c_o,"\n\nDrink up!!!")
 	before()
 
 def quem_quer_ser_pau():
@@ -204,12 +199,11 @@ def quem_quer_ser_pau():
 
 def xadrez():
 	print("lel... bebe")
-	k = input('Bebeste (ç/n)')
-	e = eval(k)
-	if e == 'ç' or e == 'Ç':
+	k = input('Bebeste? (ç/n)')
+	if k == 'ç' or k == 'Ç':
 		 print('Check')
 		 xadrez()
-	elif e == 'n' or e == 'N':
+	elif k == 'n' or k == 'N':
 		print('and next...')
 		start()
 	else:
