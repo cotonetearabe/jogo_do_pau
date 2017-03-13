@@ -61,3 +61,12 @@ random.shuffle(deck)
 print("You got:")
 for i in range(1):
    print(deck[i][0], "of", deck[i][1])
+
+"""
+from PIL import Image as img
+
+def xoragora():
+    xoagora_img = img.open("Xoragora.jpg") # possivelmente o ficheiro tem extensao diferente
+    xoagora_img.show()
+    #função_menu
+"""
