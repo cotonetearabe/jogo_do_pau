@@ -47,6 +47,8 @@ def start():
 		quem_quer_ser_pau()
 	elif y == 5:
 		xadrez()
+	elif y == 6:
+		quinta_feira()
 	else:
 		start()
 
@@ -209,3 +211,7 @@ def xadrez():
 	else:
 		print('Well ur retarded')
 start()
+
+def quinta_feira():
+	print("PAU! "*random.randint(1,9999))
+	start()
