@@ -37,7 +37,7 @@ def xoragora():
 		xoagora_img.show()
 
 def start():
-	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6: \n\n Bons Paus! cotonete.arabe\n\n")
+	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n")
 	y = eval(x)
 	if (y==0):
 		start_the_game()
@@ -53,6 +53,8 @@ def start():
 		xadrez()
 	elif (y==6):
 		quinta_feira()
+	elif (y==7):
+		ate_ao_pau()
 	else:
 		xoragora()
 		start()
@@ -220,5 +222,13 @@ def quinta_feira():
 		time.sleep(2)
 	print("\n"*r)
 	start()
+
+def ate_ao_pau():
+	print("BEBE ENQUANTO HÁ PAU!(3secs)\n\n")
+	pau = random.randint(3, 15)
+	for i in range(pau):
+		print(pau * 'PAU! ')
+		time.sleep(1.5)
+	before()
 
 start()
