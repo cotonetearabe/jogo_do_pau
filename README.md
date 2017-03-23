@@ -1,4 +1,4 @@
-Welcome to the jogo_do_pau!
+Welcome to jogo_do_pau!
 
 This is a drinking game it's only in Portuguese right now next version will be on js/html. Translations to be done latter.
 
