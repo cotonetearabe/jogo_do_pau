@@ -1,6 +1,9 @@
-#!usr/bin/python3
 '''
+Bem vindo ao Jogo do Pau
+Nem sempre tudo esta atualizado para jogar e necessario este script e a imagem Xoragora.jpg
+
 Em falta:
+-Implementar gif's no Xoragora()
 -Mais historia mais opçoes uma "teia" mais ligada e maior
 -Um gui ou uma janela destacada para nao estar tao primitivo pelo menos (ver turtleworld) or tk
 -Historia para preencher o jogo historias do pau são posivies
@@ -32,9 +35,12 @@ def before():
 
 
 def xoragora():
-	for i in range(random.randrange(1,20)):
-		xoagora_img = img.open("Xoragora.jpg")
+	r = random.randrange(1,15)
+	for i in range(r):
+		choice_of_pic = random.choice(["pics/Xoragora.jpg","pic/abs.jpg","pics/after_pau_dinner.jpg","pics/archer_pau.jpg","pics/beer_man.jpg","pics/cant_let_go.jpg","pics/cat_pau.jpg","pics/dark_pau.jpg","pics/db_pau.jpg","pics/pau_a_lot.jpg","pics/pau_pda.jpg","pics/pau_pda2.png","pics/pau_too_high.jpg","pics/soro_santo_grall.jpg","pics/third_pau.jpg","pics/toxic.jpg"])
+		xoagora_img = img.open(choice_of_pic)
 		xoagora_img.show()
+
 
 def start():
 	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n")
