@@ -231,6 +231,7 @@ def quinta_feira():
 
 def ate_ao_pau():
 	print("BEBE ENQUANTO HÁ PAU!(3secs)\n\n")
+	time.sleep(3)
 	pau = random.randint(3, 15)
 	for i in range(pau):
 		print(pau * 'PAU! ')
