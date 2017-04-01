@@ -6,7 +6,6 @@ Esta versao só precisa de python3/3.+ e de o ficheiro
 Ainda nao testado
 '''
 import math, random, os, time
-from PIL import Image as img
 
 def before():
 	q = input('Queres voltar ao menu?(ç/n)')
@@ -17,10 +16,14 @@ def before():
 	elif q == 'n' or q == 'N':
 		print('k...')
 		before()
+		choice_of_error()
 	else:
 		print('idk')
 		before()
+		choice_of_error()
 
+def choice_of_error():
+		print(random.choice(["\nf...\n","Bem isto espumou-çe a 1ª...","Bem... isto esta tudo bugado...","Bem... ou és um atrasado de merda ou estas a espera do que?","################\n\The Ban Hammer has spoken...\n################","#####\nThis is an ERROR Message\n :) sorry\n#####","\nERRRORRR BITCHES!!!\n","\nThis is your fault PAY ME!\n","\nGoogle cannot be reach at this moment...\n\nGET BACK IN YOUR CAGE PLEBIAN\n","Hello i am jogo_do_pau\nI am a python game\nplz devolop me my dev sucks :(\n","Nah dude, im way too drunk to play...\n","##############\nWelcome to the matrix\nThey found you neo!\n##############\n\n\n ps: jk we're all in hell\n\n\n"]))
 
 def start():
 	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n")
@@ -42,6 +45,7 @@ def start():
 	elif (y==7):
 		ate_ao_pau()
 	else:
+		choice_of_error()
 		start()
 
 
@@ -62,14 +66,13 @@ def start_the_game():
 			if (o=='ç') or (b=='Ç'):
 				start_the_game()
 			elif (o=='n') or (o=='N'):
-				print('The Ban Hammer has spoken...')
+				choice_of_error()
 				before()
 			else:
-				print('The Ban Hammer has spoken...')
+				choice_of_error()
 				start()
 		else:
-			print('Bem... ou és um atrasado de merda ou estas a espera do que?')
-			
+			choice_of_error()
 			start()
 	elif (type(x)==float):
 		print('Ok peculiar...')
@@ -91,18 +94,19 @@ def start_the_game():
 				before()
 			else:
 				print('Well... This is awkhard...')
+				choice_of_error()
 				before()
 		elif (quest=='n') or (quest=='N'):
 			print('Ok faggit...')
 		else:
-			
-			print('Bem... isto esta tudo bugado...')
+			choice_of_error()
 	elif type(x) == str:
 		print('Fds um gajo de humanidades...')
+		choice_of_error()
 		#Por query de imagens a funcionar por enquanto nada
 		before()
 	else:
-		print('Bem isto espumou-çe a 1ª...')
+		choice_of_error()
 		before()
 
 
@@ -120,9 +124,11 @@ def the_game():
 			print('...')
 			before()
 		else:
-			print('f..')
+			print()
+			choice_of_error()
 			before()
 	else:
+		choice_of_error()
 		before()
 
 def tracadinho():
@@ -142,6 +148,7 @@ def tracadinho():
 		print("És uma desgraça para a UE...\n\n\n")
 		before()
 	else:
+		choice_of_error()
 		before()
 
 def um_vs_zero():
@@ -168,7 +175,8 @@ def quem_quer_ser_pau():
 		print(random.choice(x), '\n eu sei que estavam a espera que isto fosse tipo quem quer ser milionario\ncalma isto sou so eu a criar nao ha tempo para tudo se querem mais ajudem')
 		before()
 	else:
-		
+		choice_of_error()
+		before()
 
 def xadrez():
 	r_u = random.randrange(1,100)
@@ -187,8 +195,8 @@ def xadrez():
 	elif (r_g<r_u):
 		print("Parabéns! Podes mandar beber um admin/Paudre\n")
 	else:
-		
-	start()
+		choice_of_error()
+		start()
 
 
 def quinta_feira():

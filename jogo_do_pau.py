@@ -32,14 +32,19 @@ def before():
 	else:
 		print('idk')
 		before()
+		xoragora()
 
 
 def xoragora():
 	r = random.randrange(1,15)
 	for i in range(r):
+		choice_of_error()
 		choice_of_pic = random.choice(["pics/Xoragora.jpg","pics/after_pau_dinner.jpg","pics/archer_pau.jpg","pics/beer_man.jpg","pics/cant_let_go.jpg","pics/cat_pau.jpg","pics/dark_pau.jpg","pics/db_pau.jpg","pics/pau_a_lot.jpg","pics/pau_pda.jpg","pics/pau_pda2.png","pics/pau_too_high.jpg","pics/soro_santo_grall.jpg","pics/third_pau.jpg","pics/toxic.jpg"])
 		xoagora_img = img.open(choice_of_pic)
 		xoagora_img.show()
+
+def choice_of_error():
+		print(random.choice(["\nf...\n","Bem isto espumou-çe a 1ª...","Bem... isto esta tudo bugado...","Bem... ou és um atrasado de merda ou estas a espera do que?","################\n\The Ban Hammer has spoken...\n################","#####\nThis is an ERROR Message\n :) sorry\n#####","\nERRRORRR BITCHES!!!\n","\nThis is your fault PAY ME!\n","\nGoogle cannot be reach at this moment...\n\nGET BACK IN YOUR CAGE PLEBIAN\n","Hello i am jogo_do_pau\nI am a python game\nplz devolop me my dev sucks :(\n","Nah dude, im way too drunk to play...\n","##############\nWelcome to the matrix\nThey found you neo!\n##############\n\n\n ps: jk we're all in hell\n\n\n"]))
 
 
 def start():
@@ -198,6 +203,15 @@ def quem_quer_ser_pau():
 		before()
 	else:
 		xoragora()
+
+def quem_quer_ser_pauv101():
+	x = (input('insere os nomes das as pessoas que estao ai e separa-as com virgulas(,) :').split(','))
+	while x != []:
+		print(random.choice(x), '\n eu sei que estavam a espera que isto fosse tipo quem quer ser milionario\ncalma isto sou so eu a criar nao ha tempo para tudo se querem mais ajudem\n')
+		before()
+	else:
+		xoragora()
+		before()
 
 def xadrez():
 	r_u = random.randrange(1,100)
