@@ -44,8 +44,9 @@ def xoragora():
 		xoagora_img.show()
 
 def choice_of_error():
-		print(random.choice(["\nf...\n","Bem isto espumou-çe a 1ª...","Bem... isto esta tudo bugado...","Bem... ou és um atrasado de merda ou estas a espera do que?","################\n\The Ban Hammer has spoken...\n################","#####\nThis is an ERROR Message\n :) sorry\n#####","\nERRRORRR BITCHES!!!\n","\nThis is your fault PAY ME!\n","\nGoogle cannot be reach at this moment...\n\nGET BACK IN YOUR CAGE PLEBIAN\n","Hello i am jogo_do_pau\nI am a python game\nplz devolop me my dev sucks :(\n","Nah dude, im way too drunk to play...\n","##############\nWelcome to the matrix\nThey found you neo!\n##############\n\n\n ps: jk we're all in hell\n\n\n"]))
-
+		print("\n\n\n\n\n\n")
+		print(random.choice(["\nf...\n","Bem isto espumou-çe a 1ª...","Bem... isto esta tudo bugado...","Bem... ou és um atrasado de merda ou estas a espera do que?","################\nThe Ban Hammer has spoken...\n################","#####\nThis is an ERROR Message\n :) sorry\n#####","\nERRRORRR BITCHES!!!\n","\nThis is your fault PAY ME!\n","\nGoogle cannot be reach at this moment...\n\nGET BACK IN YOUR CAGE PLEBIAN\n","Hello i am jogo_do_pau\nI am a python game\nplz devolop me my dev sucks :(\n","Nah dude, im way too drunk to play...\n","##############\nWelcome to the matrix\nThey found you neo!\n##############\n\n\n ps: jk we're all in hell\n\n\n"]))
+		print("\n\n")
 
 def start():
 	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n")
