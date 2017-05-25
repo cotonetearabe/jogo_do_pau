@@ -24,7 +24,7 @@ def before():
 	q = input('Queres voltar ao menu?(ç/n)')
 	a = random.randrange(2, 54)
 	if q == 'ç' or q == 'Ç' or q == '':
-		print('\n\n\n\n\n\n\n\n\n' * a )
+		print('\n\n\n\n\n\n\n\n\n' * a)
 		start()
 	elif q == 'n' or q == 'N':
 		print('k...')
@@ -43,6 +43,7 @@ def xoragora():
 		choice_of_pic = random.choice(["pics/Xoragora.jpg", "pics/after_pau_dinner.jpg", "pics/archer_pau.jpg", "pics/beer_man.jpg", "pics/cant_let_go.jpg", "pics/cat_pau.jpg", "pics/dark_pau.jpg", "pics/db_pau.jpg", "pics/pau_a_lot.jpg", "pics/pau_pda.jpg", "pics/pau_pda2.png", "pics/pau_too_high.jpg", "pics/soro_santo_grall.jpg", "pics/third_pau.jpg", "pics/toxic.jpg"])
 		xoagora_img = img.open(choice_of_pic)
 		xoagora_img.show()
+	start()
 
 
 def choice_of_error():
@@ -96,7 +97,6 @@ def start_the_game():
 			elif (o == 'n') or (o == 'N'):
 				print('The Ban Hammer has spoken...')
 				before()
-			# Aqui podia-se por um if (bebeu) jogo continua ou não
 			else:
 				print('The Ban Hammer has spoken...')
 				xoragora()
@@ -200,7 +200,6 @@ def um_vs_zero():
 				c_i += 1
 	else:
 		xoragora()
-		choice_of_error()
 	if (c_o > c_i):
 		print("\n\n\n0:", c_o, "1: ", c_i, "\nOs 0's ganharam...\nGanharam por", c_o - c_i, "\nDrink up!!!!")
 		before()
@@ -209,7 +208,6 @@ def um_vs_zero():
 		before()
 	else:
 		xoragora()
-		choice_of_error()
 
 
 def quem_quer_ser_pau():
@@ -255,7 +253,7 @@ def ate_ao_pau():
 	pau = random.randint(3, 15)
 	for i in range(pau):
 		print(pau * 'PAU! ')
-		time.sleep(1.5)
+		time.sleep(1)
 	before()
 
 
@@ -269,7 +267,6 @@ def mane_mane():
 	else:
 		print("Well fuck you then!!!")
 		xoragora()
-		choice_of_error()
 		start()
 
 
