@@ -53,25 +53,24 @@ def choice_of_error():
 
 
 def start():
-	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n")
-	y = eval(x)
-	if (y == 0):
+	x = int(input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n"))
+	if (x == 0):
 		start_the_game()
-	elif (y == 1):
+	elif (x == 1):
 		the_game()
-	elif (y == 2):
+	elif (x == 2):
 		tracadinho()
-	elif (y == 3):
+	elif (x == 3):
 		um_vs_zero()
-	elif (y == 4):
+	elif (x == 4):
 		quem_quer_ser_pau()
-	elif (y == 5):
+	elif (x == 5):
 		xadrez()
-	elif (y == 6):
+	elif (x == 6):
 		quinta_feira()
-	elif (y == 7):
+	elif (x == 7):
 		ate_ao_pau()
-	elif (y == 8):
+	elif (x == 8):
 		mane_mane()
 	else:
 		xoragora()
