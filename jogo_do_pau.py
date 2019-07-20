@@ -12,12 +12,14 @@ Ideias:
 -Fazer qualquer coisa com as varias variaveis no final(estilo de consequencias por decisoes)
 -Criar opcção de recomeçar o jogo se calhar dividir em mais funçoes para poder controlar jogo e mais tarde adicionar gui
 -Criar um contador de jogo para ver quanto e que cada pessoa joga e parte para limpar
-
-Bugs:
--bug no reconhecimento de str
 '''
-import math, random, time
-from PIL import Image as img
+# math
+import random, time, os
+try:
+	from PIL import Image as img
+except Exception as e:
+	print(e)
+	os.system("pip install Pillow")
 
 
 def before():
@@ -79,7 +81,11 @@ def start():
 
 def start_the_game():
 	y = input('Diz ai uma merda qualquer: ')
-	x = eval(y)
+	try:
+		x = eval(y)
+	except NameError as e:
+		print(e)
+		x = y
 	if (type(x) == int):
 		print('ok se quiseres ir por ai...')
 		y = input("Queres continuar?(ç ou n)\n\n\n")
@@ -269,4 +275,5 @@ def mane_mane():
 		start()
 
 
-start()
+if __name__ == '__main__':
+	start()

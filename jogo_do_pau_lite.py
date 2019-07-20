@@ -32,23 +32,29 @@ def choice_of_error():
 
 def start():
 	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n")
-	y = eval(x)
-	if (y == 0):
+	try:
+		y = eval(x)
+	except NameError:
+		y = x
+	if y == 0:
 		start_the_game()
-	elif (y == 1):
+	elif y == 1:
 		the_game()
-	elif (y == 2):
+	elif y == 2:
 		tracadinho()
-	elif (y == 3):
+	elif y == 3:
 		um_vs_zero()
-	elif (y == 4):
+	elif y == 4:
 		quem_quer_ser_pau()
-	elif (y == 5):
+	elif y == 5:
 		xadrez()
-	elif (y == 6):
+	elif y == 6:
 		quinta_feira()
-	elif (y == 7):
+	elif y == 7:
 		ate_ao_pau()
+	elif y == 'exit':
+		print("Goodbye!")
+		exit()
 	else:
 		choice_of_error()
 		start()
@@ -56,7 +62,10 @@ def start():
 
 def start_the_game():
 	y = input('Diz ai uma merda qualquer: ')
-	x = eval(y)
+	try:
+		x = eval(y)
+	except NameError:
+		x = y
 	if (type(x) == int):
 		print('ok se quiseres ir por ai...')
 		y = input("Queres continuar?(ç ou n)\n\n\n")
@@ -163,43 +172,43 @@ def um_vs_zero():
 	y = eval(x)
 	c_o = 0
 	c_i = 0
-	if (type(y)==int):
+	if (type(y) == int):
 		for i in range(y):
-			a = random.randrange(0,2)
+			a = random.randrange(0, 2)
 			if a == 0:
 				c_o += 1
 			elif a == 1:
 				c_i += 1
-	if (c_o>c_i):
+	if (c_o > c_i):
 		print("\n\n\n0:", c_o, "1: ", c_i, "\nOs 0's ganharam...\nGanharam por", c_o - c_i, "\nDrink up!!!!")
-	elif (c_o<c_i):
-		print("\n\n\n\n0:", c_o, "1: ", c_i, "\nOs 1's ganharam...\nGanharam por",c_i - c_o,"\n\nDrink up!!!")
+	elif (c_o < c_i):
+		print("\n\n\n\n0:", c_o, "1: ", c_i, "\nOs 1's ganharam...\nGanharam por", c_i - c_o, "\n\nDrink up!!!")
 	before()
+
 
 def quem_quer_ser_pau():
 	x = (input('insere os nomes das as pessoas que estao ai e separa-as com virgulas(,) :').split(','))
-	if x !=[]:
+	if x != []:
 		print(random.choice(x), '\n eu sei que estavam a espera que isto fosse tipo quem quer ser milionario\ncalma isto sou so eu a criar nao ha tempo para tudo se querem mais ajudem')
 		before()
 	else:
 		choice_of_error()
 		before()
 
+
 def xadrez():
-	r_u = random.randrange(1,100)
-	r_g = random.randrange(1,100)
-	if (r_u<r_g):
+	if (random.randrange(1, 100) < random.randrange(1, 100)):
 		print("lel... bebe")
 		k = input('Bebeste? (ç/n): ')
-		if (k=='ç') or (k=='Ç'):
+		if (k == 'ç') or (k == 'Ç'):
 			print('Check')
 			start()
-		elif (k=='n') or (k=='N'):
+		elif (k == 'n') or (k == 'N'):
 			print('and next...')
 			start()
 		else:
 			print('Well ur retarded\n')
-	elif (r_g<r_u):
+	elif (random.randrange(1, 100) < random.randrange(1, 100)):
 		print("Parabéns! Podes mandar beber um admin/Paudre\n")
 	else:
 		choice_of_error()
@@ -207,12 +216,13 @@ def xadrez():
 
 
 def quinta_feira():
-	r = random.randint(1,9)
+	r = random.randint(1, 9)
 	for i in range(r):
-		print("PAU! "*r)
+		print("PAU! " * r)
 		time.sleep(2)
-	print("\n"*r)
+	print("\n" * 9)
 	start()
+
 
 def ate_ao_pau():
 	print("BEBE ENQUANTO HÁ PAU!(3secs)\n\n")
@@ -222,4 +232,6 @@ def ate_ao_pau():
 		time.sleep(1.5)
 	before()
 
-start()
+
+if __name__ == '__main__':
+	start()
