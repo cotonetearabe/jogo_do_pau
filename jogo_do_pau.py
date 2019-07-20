@@ -13,7 +13,8 @@ Ideias:
 como lidar com a questao de varios jogadores nas funçoes normais
 '''
 # math
-from commonFunctions import errors, choice_of_error
+# from commonFunctions import errors, choice_of_error
+from commonFunctions import *
 
 
 def printPoints():
@@ -22,13 +23,26 @@ def printPoints():
 
 
 def main():
-	pass
 	print("Bem vindo ao jogo_do_pau!\nEsta versao e um jogo baseado em turnos")
 	global players
 	players = []
 	qplayers = input('Insere os nomes dos jogadores separados por virgulas:').split(',')
 	for p in qplayers:
-		players = [p, 0]
+		# players += [p.strip(' '), 0]
+		players.append([p, 0])
+	print(players)
+	while 1:
+		for i, p in enumerate(players):
+			print(f"Agora a jogar: {p} com {players[i][1]} pontos")
+			q = input("O jogador pode passar este turno em troca de ir a casa de banho escrevendo: pass")
+			if q == 'pass' or q == 'pass'.capitalize():
+				print("Ok nenhum ponto adicionado")
+			else:
+				start()
+				players[i][1] += 100
+
+	"""
+	"""
 
 
 if __name__ == '__main__':

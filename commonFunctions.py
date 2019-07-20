@@ -44,7 +44,7 @@ def xoragora():
 
 
 def start():
-	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n")
+	x = input("Se quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, ate_ao_pau 6: \n\n Bons Paus! cotonete.arabe\n\n")
 	y = evaler(x)
 	if y == 0:
 		start_the_game()
@@ -59,8 +59,6 @@ def start():
 	elif y == 5:
 		xadrez()
 	elif y == 6:
-		quinta_feira()
-	elif y == 7:
 		ate_ao_pau()
 	elif y == 'exit':
 		print("Goodbye!")

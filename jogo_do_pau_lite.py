@@ -1,10 +1,10 @@
 #!/bin/python3
 # jogo_do_pau_lite - is the game without images
-from commonFunctions import errors
+from commonFunctions import *
 
 
 def main():
-	pass
+	start()
 
 
 if __name__ == '__main__':
