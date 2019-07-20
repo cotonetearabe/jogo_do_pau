@@ -1,70 +1,93 @@
-#!/usr/bin/python2
-# -*- coding: cp1252 -*-
-# Needs to be change for type
+#!/bin/python
+"""
+The common game function to jogo_do_pau and jogo_do_pau_lite 
+"""
 import random, time
-from PIL import Image as img
+try:
+	from PIL import Image as img
+	pillBool = True
+except Exception:
+	pillBool = False
+
+
+errors = ["\nf...\n", "Bem isto espumou-çe a 1ª...", "Bem... isto esta tudo bugado...", "Bem... ou és um atrasado de merda ou estas a espera do que?", "################\nThe Ban Hammer has spoken...\n################", "#####\nThis is an ERROR Message\n :) sorry\n#####", "\nERRRORRR BITCHES!!!\n", "\nThis is your fault PAY ME!\n", "\nGoogle cannot be reach at this moment...\n\nGET BACK IN YOUR CAGE PLEBIAN\n", "Hello i am jogo_do_pau\nI am a python game\nplz devolop me my dev sucks :(\n", "Nah dude,  im way too drunk to play...\n", "##############\nWelcome to the matrix\nThey found you neo!\n##############\n\n\n ps: jk we're all in hell\n\n\n"]
+
+
+def inputIsTrue(inStr):
+	if 'ç' in inStr or 'Ç' in inStr or 'Y' in inStr or 'y' or inStr:
+		return True
+	else:
+		return False
+
+
+def evaler(x):
+	try:
+		y = eval(x)
+		return y
+	except NameError:
+		return x
+
+
+def choice_of_error():
+	if pillBool:
+		xoragora()
+	print("\n\n\n\n\n\n")
+	print(random.choice(errors))
+	print("\n\n")
+	start()
+
+
+def xoragora():
+	choice_of_pic = random.choice(["pics/Xoragora.jpg", "pics/after_pau_dinner.jpg", "pics/archer_pau.jpg", "pics/beer_man.jpg", "pics/cant_let_go.jpg", "pics/cat_pau.jpg", "pics/dark_pau.jpg", "pics/db_pau.jpg", "pics/pau_a_lot.jpg", "pics/pau_pda.jpg", "pics/pau_pda2.png", "pics/pau_too_high.jpg", "pics/soro_santo_grall.jpg", "pics/third_pau.jpg", "pics/toxic.jpg"])
+	xoagora_img = img.open(choice_of_pic)
+	xoagora_img.show()
+
+
+def start():
+	x = input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n")
+	y = evaler(x)
+	if y == 0:
+		start_the_game()
+	elif y == 1:
+		the_game()
+	elif y == 2:
+		tracadinho()
+	elif y == 3:
+		um_vs_zero()
+	elif y == 4:
+		quem_quer_ser_pau()
+	elif y == 5:
+		xadrez()
+	elif y == 6:
+		quinta_feira()
+	elif y == 7:
+		ate_ao_pau()
+	elif y == 'exit':
+		print("Goodbye!")
+		exit()
+	else:
+		choice_of_error()
+		start()
 
 
 def before():
 	q = input('Queres voltar ao menu?(ç/n)')
-	a = random.randrange(2, 54)
 	if q == 'ç' or q == 'Ç' or q == '':
-		print('\n\n\n\n\n\n\n\n\n' * a)
+		print('\n\n\n\n\n\n\n\n\n' * random.randrange(2, 54))
 		start()
 	elif q == 'n' or q == 'N':
 		print('k...')
-		xoragora()
 		before()
-	else:
-		print('idk')
-		before()
-		xoragora()
-
-
-def xoragora():
-	r = random.randrange(1, 15)
-	for i in range(r):
 		choice_of_error()
-		choice_of_pic = random.choice(["pics/Xoragora.jpg", "pics/after_pau_dinner.jpg", "pics/archer_pau.jpg", "pics/beer_man.jpg", "pics/cant_let_go.jpg", "pics/cat_pau.jpg", "pics/dark_pau.jpg", "pics/db_pau.jpg", "pics/pau_a_lot.jpg", "pics/pau_pda.jpg", "pics/pau_pda2.png", "pics/pau_too_high.jpg", "pics/soro_santo_grall.jpg", "pics/third_pau.jpg", "pics/toxic.jpg"])
-		xoagora_img = img.open(choice_of_pic)
-		xoagora_img.show()
-	start()
-
-
-def choice_of_error():
-		print("\n\n\n\n\n\n")
-		print(random.choice(["\nf...\n", "Bem isto espumou-çe a 1ª...", "Bem... isto esta tudo bugado...", "Bem... ou és um atrasado de merda ou estas a espera do que?", "################\nThe Ban Hammer has spoken...\n################", "#####\nThis is an ERROR Message\n :) sorry\n#####", "\nERRRORRR BITCHES!!!\n", "\nThis is your fault PAY ME!\n", "\nGoogle cannot be reach at this moment...\n\nGET BACK IN YOUR CAGE PLEBIAN\n", "Hello i am jogo_do_pau\nI am a python game\nplz devolop me my dev sucks :(\n", "Nah dude, im way too drunk to play...\n", "##############\nWelcome to the matrix\nThey found you neo!\n##############\n\n\n ps: jk we're all in hell\n\n\n"]))
-		print("\n\n")
-
-
-def start():
-	x = int(input("Bem vindo ao jogo_do_pau.\n\nSe quiseres o start_the_game insere 0, the_game 1, tracadinho 2 um_vs_zero 3, quem_quer_ser_pau 4, xadrez 5, quinta_feira 6, ate_ao_pau 7: \n\n Bons Paus! cotonete.arabe\n\n"))
-	if (x == 0):
-		start_the_game()
-	elif (x == 1):
-		the_game()
-	elif (x == 2):
-		tracadinho()
-	elif (x == 3):
-		um_vs_zero()
-	elif (x == 4):
-		quem_quer_ser_pau()
-	elif (x == 5):
-		xadrez()
-	elif (x == 6):
-		quinta_feira()
-	elif (x == 7):
-		ate_ao_pau()
-	elif (x == 8):
-		mane_mane()
 	else:
-		xoragora()
-		start()
+		print('Are you blind?')
+		before()
+		choice_of_error()
 
 
 def start_the_game():
 	y = input('Diz ai uma merda qualquer: ')
-	x = y
+	x = evaler(y)
 	if (type(x) == int):
 		print('ok se quiseres ir por ai...')
 		y = input("Queres continuar?(ç ou n)\n\n\n")
@@ -160,49 +183,46 @@ def tracadinho():
 				print('...')
 				start()
 			else:
-				xoragora()
 				before()
-	elif (pau == 'n') or (pau == 'N'):
+	elif (pau == ' n ') or (pau == ' N '):
 		print("És uma desgraça para a UE...\n\n\n")
 		before()
 	else:
-		xoragora()
+		choice_of_error()
 		before()
 
 
 def um_vs_zero():
 	x = input('Quantos ciclos queres?: \n')
+	y = eval(x)
 	c_o = 0
 	c_i = 0
-	if (type(x) == int):
-		for i in range(x):
+	if (type(y) == int):
+		for i in range(y):
 			a = random.randrange(0, 2)
 			if a == 0:
 				c_o += 1
 			elif a == 1:
 				c_i += 1
-	else:
-		xoragora()
 	if (c_o > c_i):
 		print("\n\n\n0:", c_o, "1: ", c_i, "\nOs 0's ganharam...\nGanharam por", c_o - c_i, "\nDrink up!!!!")
-		before()
 	elif (c_o < c_i):
 		print("\n\n\n\n0:", c_o, "1: ", c_i, "\nOs 1's ganharam...\nGanharam por", c_i - c_o, "\n\nDrink up!!!")
-		before()
-	else:
-		xoragora()
+	before()
 
 
 def quem_quer_ser_pau():
 	x = (input('insere os nomes das as pessoas que estao ai e separa-as com virgulas(,) :').split(','))
-	print(random.choice(x), '\n eu sei que estavam a espera que isto fosse tipo quem quer ser milionario\ncalma isto sou so eu a criar nao ha tempo para tudo se querem mais ajudem')
-	before()
+	if x != []:
+		print(random.choice(x), '\n eu sei que estavam a espera que isto fosse tipo quem quer ser milionario\ncalma isto sou so eu a criar nao ha tempo para tudo se querem mais ajudem')
+		before()
+	else:
+		choice_of_error()
+		before()
 
 
 def xadrez():
-	r_u = random.randrange(1, 100)
-	r_g = random.randrange(1, 100)
-	if (r_u < r_g):
+	if (random.randrange(1, 100) < random.randrange(1, 100)):
 		print("lel... bebe")
 		k = input('Bebeste? (ç/n): ')
 		if (k == 'ç') or (k == 'Ç'):
@@ -212,45 +232,18 @@ def xadrez():
 			print('and next...')
 			start()
 		else:
-			xoragora()
 			print('Well ur retarded\n')
-	elif (r_g < r_u):
+	elif (random.randrange(1, 100) < random.randrange(1, 100)):
 		print("Parabéns! Podes mandar beber um admin/Paudre\n")
 	else:
-		xoragora()
-	start()
-
-
-def quinta_feira():
-	r = random.randint(1, 9)
-	for i in range(r):
-		print("PAU! " * r)
-		time.sleep(2)
-	print("\n" * r)
-	start()
+		choice_of_error()
+		start()
 
 
 def ate_ao_pau():
 	print("BEBE ENQUANTO HÁ PAU!(3secs)\n\n")
-	time.sleep(3)
 	pau = random.randint(3, 15)
 	for i in range(pau):
 		print(pau * 'PAU! ')
-		time.sleep(1)
+		time.sleep(1.5)
 	before()
-
-
-def mane_mane():
-	x = input("RUS?")
-	if x == 'ç' or x == 'Ç':
-		print("Goodbye my friend may the pau be with you")
-	elif x == 'n' or x == 'N':
-		print("I knew you could drink a little more!\nWelcome back!\n\n\n")
-		start()
-	else:
-		print("Well fuck you then!!!")
-		xoragora()
-		start()
-
-
-start()
